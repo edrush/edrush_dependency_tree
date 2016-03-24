@@ -1,0 +1,12 @@
+
+ # Module configuration
+module.tx_edrushdependencytree_help_edrushdependencytreeextensiondependecies {
+	persistence {
+		storagePid = {$module.tx_edrushdependencytree_extensiondependecies.persistence.storagePid}
+	}
+	view {
+		templateRootPaths.0 = {$module.tx_edrushdependencytree_extensiondependecies.view.templateRootPath}
+		partialRootPaths.0 = {$module.tx_edrushdependencytree_extensiondependecies.view.partialRootPath}
+		layoutRootPaths.0 = {$module.tx_edrushdependencytree_extensiondependecies.view.layoutRootPath}
+	}
+}

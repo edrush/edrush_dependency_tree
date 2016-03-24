@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-03-24T09:43:24Z" product-name="edrush_dependency_tree">
+		<header/>
+		<body>
+			<trans-unit id="tx_edrushdependencytree_domain_model_default">
+				<source>Default</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
