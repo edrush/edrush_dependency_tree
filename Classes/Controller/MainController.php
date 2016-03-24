@@ -1,7 +1,6 @@
 <?php
 namespace EdRush\EdrushDependencyTree\Controller;
 
-
 /***************************************************************
  *
  *  Copyright notice
@@ -28,9 +27,9 @@ namespace EdRush\EdrushDependencyTree\Controller;
  ***************************************************************/
 
 /**
- * DefaultController
+ * MainController
  */
-class DefaultController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class MainController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
 
     /**

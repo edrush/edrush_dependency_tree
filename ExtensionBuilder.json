@@ -20,7 +20,7 @@
                         ""
                     ]
                 },
-                "name": "Default",
+                "name": "Main",
                 "objectsettings": {
                     "addDeletedField": true,
                     "addHiddenField": true,
@@ -47,7 +47,7 @@
         "backendModules": [
             {
                 "actions": {
-                    "controllerActionCombinations": "Default => showDependencies"
+                    "controllerActionCombinations": "Main => showDependencies"
                 },
                 "description": "Display dependency information for the currently installed extensions.",
                 "key": "extensiondependecies",
@@ -86,7 +86,7 @@
     },
     "wires": [],
     "log": {
-        "last_modified": "2016-03-24 09:43",
+        "last_modified": "2016-03-24 10:31",
         "extension_builder_version": "7.6.0",
         "be_user": " (1)"
     }

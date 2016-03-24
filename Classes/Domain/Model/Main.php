@@ -1,7 +1,6 @@
 <?php
 namespace EdRush\EdrushDependencyTree\Domain\Model;
 
-
 /***************************************************************
  *
  *  Copyright notice
@@ -30,7 +29,7 @@ namespace EdRush\EdrushDependencyTree\Domain\Model;
 /**
  * Default
  */
-class Default extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Main extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
     

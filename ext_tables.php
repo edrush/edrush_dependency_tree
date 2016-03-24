@@ -14,7 +14,7 @@ if (TYPO3_MODE === 'BE') {
 		'extensiondependecies',	// Submodule key
 		'',						// Position
 		array(
-			'Default' => 'showDependencies',
+			'Main' => 'showDependencies',
 			
 		),
 		array(
@@ -28,5 +28,5 @@ if (TYPO3_MODE === 'BE') {
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Extension dependency tree');
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_edrushdependencytree_domain_model_default', 'EXT:edrush_dependency_tree/Resources/Private/Language/locallang_csh_tx_edrushdependencytree_domain_model_default.xlf');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_edrushdependencytree_domain_model_default');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_edrushdependencytree_domain_model_main', 'EXT:edrush_dependency_tree/Resources/Private/Language/locallang_csh_tx_edrushdependencytree_domain_model_main.xlf');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_edrushdependencytree_domain_model_main');
