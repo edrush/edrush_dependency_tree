@@ -25,6 +25,7 @@ namespace EdRush\EdrushDependencyTree\Controller;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use EdRush\EdrushDependencyTree\Domain\Model\Extension;
 
 /**
  * MainController
@@ -39,7 +40,33 @@ class MainController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function showDependenciesAction()
     {
-        
+        // dev
+        // error_reporting(E_ALL);
+        // ini_set('display_errors', 1);
+
+        // TYPO3 6&7
+        $localConfigurationFile = PATH_site.'typo3conf/LocalConfiguration.php';
+        $configuration = require $localConfigurationFile;
+
+        $extensions = array();
+        $extensionConstraints = array();
+        $activeExtensions = $configuration['EXT']['extConf'];
+
+        foreach ($activeExtensions as $extensionKey => $config) {
+            $extensionConfigurationFile = PATH_site.'typo3conf'.DIRECTORY_SEPARATOR.'ext'.DIRECTORY_SEPARATOR.$extensionKey.DIRECTORY_SEPARATOR.'ext_emconf.php';
+            if (is_readable($extensionConfigurationFile)) {
+                require $extensionConfigurationFile;
+                $extensionConfiguration = array_pop($EM_CONF);
+
+                $extension = new Extension();
+                $extension->setKey($extensionKey);
+                $extensions[$extensionKey] = $extension;
+                $extensionConstraints[$extensionKey] = $extensionConfiguration['constraints'];
+            }
+        }
+
+        $this->view->assign('extensions', $extensions);
+
     }
     
     /**
