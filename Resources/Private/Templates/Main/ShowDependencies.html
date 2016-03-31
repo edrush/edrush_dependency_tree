@@ -1,21 +1,26 @@
 <div xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+
     <f:layout name="Default"/>
     <f:section name="content">
-        <h3>Active Extensions</h3>
-        <ul>
-            <f:for each="{extensions}" as="extension">
-                <li>
-                    {extension}
-                    <ul>
-                        <f:render partial="Main/ExtensionConstraints"
-                                  arguments="{constraints: extension.dependencies, label: 'depends'}"/>
-                        <f:render partial="Main/ExtensionConstraints"
-                                  arguments="{constraints: extension.conflicts, label: 'conflicts'}"/>
-                        <f:render partial="Main/ExtensionConstraints"
-                                  arguments="{constraints: extension.suggestions, label: 'suggests'}"/>
-                    </ul>
-                </li>
-            </f:for>
-        </ul>
+        <f:comment>What the h$ll is best practice to include js?</f:comment>
+        <script type="application/javascript" src="{f:uri.resource(path: 'js/samizdatco-arbor/arbor.js')}"></script>
+        <script type="application/javascript" src="{f:uri.resource(path: 'js/samizdatco-arbor/arbor-tween.js')}"></script>
+        <script type="application/javascript" src="{f:uri.resource(path: 'js/init-arbor.js')}"></script>
+            <h3>Active Extensions</h3>
+            <ul>
+                <f:for each="{extensions}" as="extension">
+                    <li>
+                        {extension}
+                        <ul>
+                            <f:render partial="Main/ExtensionConstraints"
+                                      arguments="{constraints: extension.dependencies, label: 'depends'}"/>
+                            <f:render partial="Main/ExtensionConstraints"
+                                      arguments="{constraints: extension.conflicts, label: 'conflicts'}"/>
+                            <f:render partial="Main/ExtensionConstraints"
+                                      arguments="{constraints: extension.suggestions, label: 'suggests'}"/>
+                        </ul>
+                    </li>
+                </f:for>
+            </ul>
     </f:section>
 </div>
