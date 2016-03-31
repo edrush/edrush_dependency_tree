@@ -1,0 +1,6 @@
+{
+  "name": "edrush_dependency_tree",
+  "dependencies": {
+    "samizdatco-arbor": "samizdatco/arbor"
+  }
+}
