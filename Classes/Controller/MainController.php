@@ -78,6 +78,8 @@ class MainController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             $extensionKey = array_pop($extensionDirectoryParts);
 
             if (is_readable($extensionConfigurationFile)) {
+                // this is only to prevent IDE warnings
+                $EM_CONF = array();
                 require $extensionConfigurationFile;
                 $extensionConfiguration = array_pop($EM_CONF);
 

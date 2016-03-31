@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
     // ===========================================================================
     // CONFIGURE GRUNT ===========================================================
@@ -13,10 +13,15 @@ module.exports = function(grunt) {
         copy: {
             build: {
                 files: [
-                    // includes files within path
-                    {expand: true, src: ['bower_components/samizdatco-arbor/build/tmpl/*.js'], dest: 'Resources/Public/js/samizdatco-arbor/', filter: 'isFile', flatten: true},
-                ],
-            },
+                    {
+                        expand: true,
+                        src: ['bower_components/samizdatco-arbor/lib/*'],
+                        dest: 'Resources/Public/js/samizdatco-arbor/',
+                        filter: 'isFile',
+                        flatten: true
+                    }
+                ]
+            }
         }
 
     });
