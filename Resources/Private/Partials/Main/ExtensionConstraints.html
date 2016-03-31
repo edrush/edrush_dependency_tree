@@ -1,0 +1,9 @@
+<f:if condition="{constraints}">
+    <li>{label}:
+        <ul>
+            <f:for each="{constraints}" as="constraint">
+                <li>{constraint}</li>
+            </f:for>
+        </ul>
+    </li>
+</f:if>

@@ -1,16 +1,21 @@
-<f:layout name="Layout" />
+<f:layout name="Layout"/>
 
 <f:section name="Content">
-    <div class="row">
-        <div class="col-lg-12">
-            Active Extensions
-        </div>
-    </div>
-    <f:for each="{extensions}" as="extension">
-        <div class="row">
-            <div class="col-lg-12">
-                {extension.key}
-            </div>
-        </div>
-    </f:for>
+    <h3>Active Extensions</h3>
+    <ul>
+        <f:for each="{extensions}" as="extension">
+            <li>
+                {extension.name}
+                <f:if condition="{extension.key}">(<i>{extension.key}</i>)</f:if>
+                <ul>
+                    <f:render partial="Main/ExtensionConstraints"
+                              arguments="{constraints: extension.dependencies, label: 'depends'}"/>
+                    <f:render partial="Main/ExtensionConstraints"
+                              arguments="{constraints: extension.conflicts, label: 'conflicts'}"/>
+                    <f:render partial="Main/ExtensionConstraints"
+                              arguments="{constraints: extension.suggestions, label: 'suggests'}"/>
+                </ul>
+            </li>
+        </f:for>
+    </ul>
 </f:section>

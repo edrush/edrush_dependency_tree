@@ -16,17 +16,17 @@ class Extension
     /**
      * @var Constraint[]
      */
-    protected $dependencies;
+    protected $dependencies = array();
 
     /**
      * @var Constraint[]
      */
-    protected $conflicts;
+    protected $conflicts = array();
 
     /**
      * @var Constraint[]
      */
-    protected $suggestions;
+    protected $suggestions = array();
 
     /**
      * @return string
