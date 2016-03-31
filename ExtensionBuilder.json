@@ -60,7 +60,7 @@
         "emConf": {
             "category": "module",
             "custom_category": "",
-            "dependsOn": "typo3 => 4.5.0-\nextbase => 1.3-",
+            "dependsOn": "typo3 => 6.2.0-\nextbase => 6.2.0-\nfluid => 6.2.0-",
             "disableLocalization": false,
             "disableVersioning": false,
             "skipGenerateDocumentationTemplate": false,
