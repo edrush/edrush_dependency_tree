@@ -15,11 +15,7 @@ class Constraint
 
     public function __toString()
     {
-        $string = $this->extension->getName() . ' (<i>' . $this->extension->getKey() . '</i>';
-        if (!is_null($this->version) && '' != trim($this->version)) {
-            $string .= ', ' . trim($this->version);
-        }
-        $string .= ')';
+        $string = $this->extension->__toString();
 
         return $string;
     }

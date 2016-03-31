@@ -84,6 +84,7 @@ class MainController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
                 $extension = new Extension();
                 $extension->setKey($extensionKey);
                 $extension->setName($extensionConfiguration['title']);
+                $extension->setVersion($extensionConfiguration['version']);
                 $extensions[$extensionKey] = $extension;
                 $extensionConstraints[$extensionKey] = $extensionConfiguration['constraints'];
             }

@@ -29,6 +29,22 @@ class Extension
     protected $suggestions = array();
 
     /**
+     * @var string
+     */
+    protected $version = null;
+
+    public function __toString()
+    {
+        $string = $this->name . ' (<i>' . $this->key . '</i>';
+        if (!is_null($this->version) && '' != trim($this->version)) {
+            $string .= ', ' . trim($this->version);
+        }
+        $string .= ')';
+
+        return $string;
+    }
+
+    /**
      * @return string
      */
     public function getKey()
@@ -145,6 +161,24 @@ class Extension
     public function setSuggestions($suggestions)
     {
         $this->suggestions = $suggestions;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
+    /**
+     * @param string $version
+     * @return Extension
+     */
+    public function setVersion($version)
+    {
+        $this->version = $version;
         return $this;
     }
 

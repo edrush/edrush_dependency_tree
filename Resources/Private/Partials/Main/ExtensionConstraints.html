@@ -1,9 +1,11 @@
-<f:if condition="{constraints}">
-    <li>{label}:
-        <ul>
-            <f:for each="{constraints}" as="constraint">
-                <li>{constraint}</li>
-            </f:for>
-        </ul>
-    </li>
-</f:if>
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+    <f:if condition="{constraints}">
+        <li>{label}:
+            <ul>
+                <f:for each="{constraints}" as="constraint">
+                    <li>{constraint}</li>
+                </f:for>
+            </ul>
+        </li>
+    </f:if>
+</div>

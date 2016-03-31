@@ -1,21 +1,21 @@
-<f:layout name="Layout"/>
-
-<f:section name="Content">
-    <h3>Active Extensions</h3>
-    <ul>
-        <f:for each="{extensions}" as="extension">
-            <li>
-                {extension.name}
-                <f:if condition="{extension.key}">(<i>{extension.key}</i>)</f:if>
-                <ul>
-                    <f:render partial="Main/ExtensionConstraints"
-                              arguments="{constraints: extension.dependencies, label: 'depends'}"/>
-                    <f:render partial="Main/ExtensionConstraints"
-                              arguments="{constraints: extension.conflicts, label: 'conflicts'}"/>
-                    <f:render partial="Main/ExtensionConstraints"
-                              arguments="{constraints: extension.suggestions, label: 'suggests'}"/>
-                </ul>
-            </li>
-        </f:for>
-    </ul>
-</f:section>
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
+    <f:layout name="Default"/>
+    <f:section name="content">
+        <h3>Active Extensions</h3>
+        <ul>
+            <f:for each="{extensions}" as="extension">
+                <li>
+                    {extension}
+                    <ul>
+                        <f:render partial="Main/ExtensionConstraints"
+                                  arguments="{constraints: extension.dependencies, label: 'depends'}"/>
+                        <f:render partial="Main/ExtensionConstraints"
+                                  arguments="{constraints: extension.conflicts, label: 'conflicts'}"/>
+                        <f:render partial="Main/ExtensionConstraints"
+                                  arguments="{constraints: extension.suggestions, label: 'suggests'}"/>
+                    </ul>
+                </li>
+            </f:for>
+        </ul>
+    </f:section>
+</div>
